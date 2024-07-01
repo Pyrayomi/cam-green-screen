@@ -7,8 +7,8 @@ class GreenScreen:
         self.webcam = webcam
         self.color = color
         self.kernel_type = kernel_type
-        self.kernel_size = int(kernel_size)
-        self.noisey_kernel = int(noisey_kernel)
+        self.kernel_size = kernel_size
+        self.noisey_kernel = noisey_kernel
         self.thresh = thresh
         self.debug = False
         self.show_webcam = False
@@ -43,7 +43,7 @@ class GreenScreen:
         grn_screen = np.zeros(orig.shape, np.uint8)  # An array of bytes the same size as our image
         grn_screen[:] = self.color  # Make all those bytes a color (green! blue! purple! who cares!)
 
-        with pyvirtualcam.Camera(width=orig.shape[1], height=orig.shape[0], fps=20) as cam:
+        with pyvirtualcam.Camera(width=orig.shape[1], height=orig.shape[0], fps=20, fmt=pyvirtualcam.PixelFormat.BGR) as cam:
             while True:
                 ret, frame = cap.read()
                 fgmask = self.find_dif(orig, frame)
@@ -57,7 +57,7 @@ class GreenScreen:
                 if self.show_webcam:
                     wgs = frame
 
-                cam.send(cv2.cvtColor(wgs, cv2.COLOR_BGR2RGB))
+                cam.send(wgs)
                 cam.sleep_until_next_frame()
 
                 if self.debug:
