@@ -1,10 +1,10 @@
-# Virtual Green Screen
+# Virtual Cam Background
 
-This project creates a virtual green screen that can be used as a virtual camera in programs like Zoom, Teams, etc. It uses the MediaPipe library for selfie segmentation, OpenCV for video manipulation, and pyvirtualcam to create the virtual camera. The graphical interface is built using Tkinter.
+This project creates a Virtual Cam Background that can be used as a virtual camera in programs like Zoom, Teams, etc. It uses the MediaPipe library for selfie segmentation, OpenCV for video manipulation, and pyvirtualcam to create the virtual camera. The graphical interface is built using Tkinter.
 
 ## Features
 
-- Adds a virtual green screen by cropping the person from the background.
+- Adds a Virtual Cam Background by cropping the person from the background.
 - Allows selection of a GIF or WEBP as the background.
 - Supports different camera resolutions.
 - Interactive graphical interface to adjust settings in real-time.
@@ -52,7 +52,7 @@ This project creates a virtual green screen that can be used as a virtual camera
 ## Project Structure
 
 - `gui.py`: Contains the `GUI` class that implements the graphical interface for user interaction.
-- `virtual_green_screen.py`: Contains the `VirtualGreenScreen` class that implements the virtual green screen logic.
+- `virtual_green_screen.py`: Contains the `VirtualGreenScreen` class that implements the Virtual Cam Background logic.
 - `requirements.txt`: List of project dependencies.
 - `LICENSE`: Project license file (MIT).
 - `.gitignore`: List of files and directories to be ignored by Git.
